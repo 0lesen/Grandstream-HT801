@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HT801 XML Provisioning Configuration -->
+<gs_provision version="1">
+<mac>${mac}</mac>
+	<config version="2">
+		<!-- HTTPS enable -->
+		<P1650>0</P1650> 
+		<!-- HTTPS Web Port -->
+		<P27010>443</P27010>
+		<!-- DHCP enable -->
+		<P8>0</P8>
+		<!-- Set timezone -->
+		<P64>CET-1CEST-2,M3.5.0/02:00:00,M10.5.0/03:00:00</P64>
+		<!-- Admin password for web interface -->
+		<P2>${admin_password}</P2>
+		<!-- Keep-alive 20 sec -->
+		<P84>20</P84>
+		<!-- 3CX Auto Provision disable -->
+		<P1414>0</P1414>
+		<!-- Check for New Firmware at boot -->
+		<P238>0</P238>
+		<!-- Firmware via TFTP -->
+		<P212>0</P212>
+		<!-- Firmware Server Path -->
+        <P192>${tftp_server}//firmware/ht801</P192>
+		<!-- Config Server ip -->
+		<P237>${tftp_server}//ht801</P237>
+                <!-- Overwrite server option 60 -->
+                <P145>0</P145>
+		<!-- Disable ghost calls -->
+		<P243>1</P243>
+		<!-- Disable TR-069 -->
+		<P1409>0</P1409>
+		<!-- FXS PORT 1 Settings -->
+		<!-- Account Active -->
+		<P271>1</P271>
+		<!-- Primary SIP Server -->
+		<P47>${gateway}</P47>
+		<!-- Prefer Primary SIP Server -->
+		<P4567>1</P4567>
+		<!-- SIP User ID -->
+		<P35>${username}</P35>
+		<!-- Authentication ID -->
+		<P36>${username}</P36>
+		<!-- Authentication password -->
+		<P34>${secret}</P34>
+		<!-- SIP Name -->
+		<P3>${username}</P3>
+                <!-- Allow DHCP option 66 to override server -->
+                <P145>0</P145>
+	</config>
+</gs_provision>
