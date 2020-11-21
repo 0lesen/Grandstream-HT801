@@ -1,8 +1,8 @@
 #Grandstream-HT801 automatically provisioning
 
 
-##dependencies:
-# psycopg2
+#dependencies:
+## psycopg2
 
 ## DHCP
 In this example I use isc-dhcp-server on ubuntu 18.04 server
