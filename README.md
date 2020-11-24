@@ -1,5 +1,4 @@
-##Grandstream-HT801 automatically provisioning example==
-
+##Grandstream-HT801 automatically provisioning example
 
 ##dependencies:
 ### psycopg2
