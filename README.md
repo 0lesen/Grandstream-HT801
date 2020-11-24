@@ -31,10 +31,14 @@ tftpboot
 </pre>
 
 ## Configuration script
+The script is a simple python3 script that makes files based on tempalte with data from a database
+In this example I connect to a postgres databases and select the data from  
 Place the configuration script "build-ht801-configs.py" in <pre>/root/bin/</pre>
 
 ### Dependencies for the configuration script to work
-#### pip3 install psycopg2
+<pre>
+pip3 install psycopg2
+</pre>
 
 ## Conjobs (as root) - generates the configurations every 5 minutes
 crontab -e 

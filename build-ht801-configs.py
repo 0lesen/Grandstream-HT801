@@ -14,9 +14,10 @@ db_database = "sipfriends"
 db_host = "10.10.10.10"
 db_port = "5432"
 
-# TFTP paths
+# TFTP information
 tftp_path = '/var/lib/tftpboot/'
 current_files = '/var/lib/tftpboot/ht801/*'
+tftp_server_ip = "40.40.40.40"
 files = glob.glob(current_files)
 
 # Remove old configuration files
@@ -34,7 +35,7 @@ try:
        template_file_path = 'root/bin/ht801_template.txt'
        template_file = open(template_file_path, 'r')
        src = Template( template_file.read() )
-       b={ 'mac':user["mac"], 'gateway':user["gateway"], 'tftp_server':user["tftp_server"], 'username':user["username"], 'secret':user["secret"], 'admin_password':user["admin_password"]}
+       b={ 'mac':user["mac"], 'gateway':user["gateway"], 'tftp_server':tftp_server_ip, 'username':user["username"], 'secret':user["secret"], 'admin_password':user["admin_password"]}
        result = src.substitute(b)
        config_file_path = tftp_path + 'ht801/' + 'cfg' + user["mac"] + '.xml'
        config_file = open(config_file_path,'w+')
