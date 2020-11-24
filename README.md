@@ -1,8 +1,8 @@
-==Grandstream-HT801 automatically provisioning example==
+##Grandstream-HT801 automatically provisioning example==
 
 
-#dependencies:
-## psycopg2
+##dependencies:
+### psycopg2
 
 ## DHCP
 In this example I use isc-dhcp-server software (apt install isc-dhcp-server) on ubuntu 18.04 server
@@ -16,9 +16,10 @@ class "GRANDSTREAM HT801"{
 }
 </pre>
 
-== TFTP server ==
+## TFTP server
 In this example I use Ubuntu 18.04 with "tftpd-hpa" software (apt install tftpd-hpa)
 TFTP structure:
+<pre>
 tftpboot
  |
  --> frimware
@@ -30,6 +31,7 @@ tftpboot
  --> ht801
       |
       --> cfgcxxxxxxxxxxx.xml
+</pre>
 
 ## Configuration script
 Place the configuration script "build-ht801-configs.py" in <pre>/root/bin/</pre>
