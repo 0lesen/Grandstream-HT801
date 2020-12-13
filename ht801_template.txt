@@ -22,7 +22,7 @@
 		<!-- Firmware via TFTP -->
 		<P212>0</P212>
 		<!-- Firmware Server Path -->
-        <P192>${tftp_server}//firmware/ht801</P192>
+                <P192>${tftp_server}//firmware/ht801</P192>
 		<!-- Config Server ip -->
 		<P237>${tftp_server}//ht801</P237>
                 <!-- Overwrite server option 60 -->
