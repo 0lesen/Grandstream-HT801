@@ -37,7 +37,7 @@ Place the configuration script **build-ht801-configs.py** in <pre>/root/bin/</pr
 
 ### Dependencies for the configuration script to work
 <pre>
-pip3 install psycopg2
+pip3 install -r requirements.txt
 </pre>
 
 ## Database table and colums
