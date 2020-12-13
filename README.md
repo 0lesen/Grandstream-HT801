@@ -4,7 +4,7 @@
 ## DHCP
 In this example I use isc-dhcp-server software (apt install isc-dhcp-server) on ubuntu 18.04 server
 
-To catch the grandstream HT801 SIP and pass TFTP server ip information in the DHCP request we use option 66
+To catch the grandstream HT801 SIP and pass TFTP server ip information in the DHCP request I use option 66
 In the dhcpd.conf file:
 <pre>
 class "GRANDSTREAM HT801"{
@@ -31,9 +31,8 @@ tftpboot
 </pre>
 
 ## Configuration script
-The script is a simple python3 script that makes files based on tempalte with data from a database
-In this example I connect to a postgres databases and select the data from  
-Place the configuration script **build-ht801-configs.py** in <pre>/root/bin/</pre>
+The script is a simple python3 script that generates files based on template with data from a database
+The configuration script **build-ht801-configs.py** is placed in <pre>/root/bin/</pre>
 
 ### Dependencies for the configuration script to work
 <pre>
@@ -41,11 +40,12 @@ pip3 install -r requirements.txt
 </pre>
 
 ## Database table and colums
-In this example I use mySQL database on Ubuntu 18.04
+In this example I use postgresql database on Ubuntu 18.04
 
-Create table called **sipfriends**
+I have one table called **sipfriends**
 
-In the table we need at least (**mac, gateway, tftp_server_ip, device_type, username, secret, admin_password**) colums
+Colums required in the table: 
+**mac, gateway, tftp_server_ip, device_type, username, secret, admin_password**
 
 Colums explained:
 **mac** - Used to validate client mac address
