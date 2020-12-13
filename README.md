@@ -40,10 +40,12 @@ Place the configuration script **build-ht801-configs.py** in <pre>/root/bin/</pr
 pip3 install psycopg2
 </pre>
 
-### Database table and colums
-Create table called '''sipfriends'''
+## Database table and colums
+In this example I use mySQL database on Ubuntu 18.04
 
-In the table we need at least (mac, gateway, tftp_server_ip, username, secret, admin_password) colums in the table
+Create table called **sipfriends**
+
+In the table we need at least (**mac, gateway, tftp_server_ip, device_type, username, secret, admin_password**) colums
 
 Colums explained:
 **mac** - Used to validate client mac address
@@ -51,6 +53,8 @@ Colums explained:
 **gateway** - Point to the sip gateway
 
 **tftp_server_ip** - Point to the tftp server
+
+**device_type** - Specify the type/model of device
 
 **username** - User telefone number
 
