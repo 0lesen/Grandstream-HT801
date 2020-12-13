@@ -44,10 +44,10 @@ In this example I use postgresql database on Ubuntu 18.04
 
 I have one table called **sipfriends**
 
-Colums required in the table: 
+Colums required in the table:<br> 
 **mac, gateway, tftp_server_ip, device_type, username, secret, admin_password**
 
-Colums explained:
+Colums explained:<br>
 **mac** - Used to validate client mac address
 
 **gateway** - Point to the sip gateway
