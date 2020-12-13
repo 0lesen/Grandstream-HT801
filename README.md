@@ -33,12 +33,26 @@ tftpboot
 ## Configuration script
 The script is a simple python3 script that makes files based on tempalte with data from a database
 In this example I connect to a postgres databases and select the data from  
-Place the configuration script "build-ht801-configs.py" in <pre>/root/bin/</pre>
+Place the configuration script '''build-ht801-configs.py''' in <pre>/root/bin/</pre>
 
 ### Dependencies for the configuration script to work
 <pre>
 pip3 install psycopg2
 </pre>
+
+### Database table and colums
+Create table called '''sipfriends'''
+
+In the table we need at least (mac, gateway, tftp_server_ip, username, secret, admin_password) colums in the table
+
+Colums explained:
+'''mac''' - Used to validate client mac address
+'''gateway''' - Point to the sip gateway
+'''tftp_server_ip''' - Point to the tftp server
+'''username''' - User telefone number
+'''secret''' - User password for validating the user
+'''admin_password''' - Password for remote access
+
 
 ## Conjobs (as root) - generates the configurations every 5 minutes
 crontab -e 
