@@ -24,6 +24,7 @@ files = glob.glob(current_files)
 for f in files:
     os.remove(f)
 
+# Establish connection to databasem, and select all users using device type HT801
 try:
    connection = psycopg2.connect(user=db_user, password=db_password, host=db_host, port=db_port, database=db_database)
    cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -31,6 +32,7 @@ try:
    cursor.execute(postgres_select_query)
    res = cursor.fetchall()
 
+   # Loop every user in the select query, and generate configuration files for each user
    for user in res:
        template_file_path = 'root/bin/ht801_template.txt'
        template_file = open(template_file_path, 'r')
@@ -43,6 +45,7 @@ try:
        config_file.close()
        print ('Generating configuration for cpe type:', user["device_type"], '- mac:', user["mac"], '- number:', user["username"])
 
+# If error, print to syslog and close the program
 except Exception as error :
     print("ERROR:", error)
     syslog.openlog()
@@ -50,6 +53,7 @@ except Exception as error :
     syslog.closelog()
     sys.exit(0)
 
+# Close connection to the database
 finally:
     if(connection):
         cursor.close()
